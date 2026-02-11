@@ -111,6 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
             chuzania: "世界で1つのオリジナルアクセサリー作り\nヘアピン10チュ、イヤリング&キーホルダー30チュ",
             image: "images/shop-yururi.jpg",
             instagram: "https://www.instagram.com/yururi06_f/"
+        },
+        "minitoyohashi": {
+            name: "MINI 豊橋",
+            detail: "車両展示",
+            description: "輸入車ブランドMINIの正規ディーラーです。フルモデルチェンジで進化した新型MINI。ＥＶモデルや新しいSUVモデルのカントリーマンも展示するのでお気軽にお立ち寄りください。",
+            chuzania: "",
+            image: "images/shop-mini-toyohashi.png",
+            instagram: "https://www.instagram.com/mini_toyohashi/"
         }
     };
 
