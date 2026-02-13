@@ -331,14 +331,25 @@ a:hover {
     line-height: 1.1;
 }
 
+.hero-title .title-text {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .hero-title .year {
     font-family: var(--font-body);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-left: 1rem;
+    display: block;
+    /* Force new line */
+    text-align: center;
+    /* Center align with title */
+    margin-top: -15px;
+    /* Bring closer to title */
     color: var(--color-text);
-    vertical-align: middle;
     text-shadow: 2px 2px 0 #fff;
+    letter-spacing: 0.2em;
+    /* Add spacing for style */
 }
 
 .hero-info {
@@ -394,29 +405,39 @@ a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .hero-container {
+        padding: 0 1rem;
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: 12.5vw;
+        /* Maximize title size */
     }
 
     .hero-title .year {
-        font-size: 1.2rem;
+        font-size: 5vw;
+        margin-top: -5px;
+        /* Adjust gap responsively */
     }
 
     .hero-date {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        /* Reduced to emphasize title */
     }
 
     .hero-time {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        /* Reduced */
     }
 
     .hero-location {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        /* Reduced */
     }
 
     .hero-text-content {
         width: 100%;
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .hero-info p {
