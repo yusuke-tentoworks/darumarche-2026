@@ -418,6 +418,23 @@ a:hover {
         width: 100%;
         padding: 0 1rem;
     }
+
+    .hero-info p {
+        white-space: nowrap;
+    }
+
+    .hero-date {
+        font-size: 13vw;
+        /* Responsive size to prevent wrap */
+    }
+
+    .hero-time {
+        font-size: 8vw;
+    }
+
+    .hero-location {
+        font-size: 10vw;
+    }
 }
 
 display: none;
@@ -488,6 +505,13 @@ display: none;
     background-position: center;
     background-attachment: fixed;
     /* パララックス効果 */
+}
+
+@media (max-width: 768px) {
+    .about {
+        background-attachment: scroll;
+        /* Mobile parallax fix */
+    }
 }
 
 .modal-overlay {

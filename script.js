@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 imgContainer.className = 'gallery-item';
 
                 const img = document.createElement('img');
-                img.src = `images/gallery-2025-${imgNum}.png`; // png or jpg depending on actual files. Assuming png from renaming script.
+                img.src = `images/gallery-2025-${imgNum}.jpg`; // Optimized JPG
                 img.alt = `Gallery Image 2025-${imgNum}`;
                 img.loading = 'lazy';
 
@@ -598,4 +598,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+    // Lazy Load Google Map
+    const accessSection = document.getElementById('access');
+    const mapIframe = document.querySelector('.map-wrapper iframe');
+
+    if (accessSection && mapIframe) {
+        // Store the src and remove it initially to prevent loading
+        const mapSrc = mapIframe.getAttribute('src');
+        if (mapSrc) {
+            mapIframe.setAttribute('data-src', mapSrc);
+            mapIframe.removeAttribute('src');
+        }
+
+        const mapObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target.querySelector('iframe');
+                    if (iframe && iframe.getAttribute('data-src')) {
+                        iframe.src = iframe.getAttribute('data-src');
+                        iframe.removeAttribute('data-src');
+                        obs.unobserve(entry.target);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '200px'
+        });
+
+        mapObserver.observe(accessSection);
+    }
 });
