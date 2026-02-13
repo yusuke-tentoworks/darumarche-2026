@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>だるまルシェ 2026 - 豊川市五社稲荷社</title>
     <meta name="description" content="2026年3月29日（日）開催！豊川市五社稲荷社での「だるまルシェ」。おしゃれなマルシェ、キッチンカー、ステージイベントで春の訪れを楽しみましょう。">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/daruma-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/daruma-logo.png">
+
+    <!-- OGP -->
+    <meta property="og:title" content="だるまルシェ 2026 - 豊川市五社稲荷社">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inoueyuusuke.github.io/daruma-rche-2026/">
+    <meta property="og:image" content="https://inoueyuusuke.github.io/daruma-rche-2026/images/ogp.png">
+    <meta property="og:description"
+        content="2026年3月29日（日）開催！豊川市五社稲荷社での「だるまルシェ」。おしゃれなマルシェ、キッチンカー、ステージイベントで春の訪れを楽しみましょう。">
+    <meta property="og:site_name" content="だるまルシェ 2026">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Zen Old Mincho: 和風の見出し用, Zen Kaku Gothic New: 読みやすい本文用 -->
@@ -53,8 +68,20 @@
 
     <main>
         <section id="hero" class="hero">
-            <div class="hero-image-container">
-                <img src="images/hero-flyer.png" alt="だるまルシェ 2026 フライヤー" class="hero-flyer-img">
+            <div class="hero-image-layer">
+                <img src="images/hero-flyer.png" alt="だるまルシェ 2026 背景" class="hero-flyer-img">
+            </div>
+            <div class="hero-container">
+                <!-- Text Content Only -->
+                <div class="hero-text-content fade-in-up">
+                    <h2 class="hero-title">だるまルシェ<span class="year">2026</span></h2>
+                    <div class="hero-info">
+                        <p class="hero-date">3<span class="slash">/</span>29<span class="day">(Sun)</span></p>
+                        <p class="hero-time">10:00 - 17:00</p>
+                        <p class="hero-location">五社稲荷社</p>
+                        <p class="hero-note">入場無料（小雨決行）</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -205,8 +232,10 @@
                             <div class="card-image">
                                 <img src="images/vegetables.png" alt="JA協賛企画">
                             </div>
-                            <h4>JA協賛企画!!</h4>
-                            <p class="info-desc">JAひまわりローンセンター・JA豊橋ローンセンターの協賛ブースにて<br>アンケートご記入で<br>採れたて野菜プレゼント！！</p>
+                            <h4>JA協賛企画！！</h4>
+                            <p class="info-desc">
+                                JAひまわりローンセンターとJA豊橋ローンセンターの協賛ブースにてアンケートご記入で採れたて野菜プレゼント！！
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -218,69 +247,222 @@
                     <div class="shop-category">
                         <h4>Food & Drink</h4>
                         <ul class="shop-list pink-list">
-                            <li>Danon cafe</li>
-                            <li>BAMBOO JOCKEY</li>
-                            <li>ラグランキッチン</li>
-                            <li>un crème</li>
-                            <li>コスキッチン</li>
-                            <li>唐揚げのスズヒロ</li>
-                            <li>ルッジネ</li>
-                            <li>RAD LAND PICNIC</li>
-                            <li>19番ホール</li>
-                            <li>んどん</li>
-                            <li>SPICE CURRY だんぷ</li>
-                            <li>Paki</li>
-                            <li>豊橋養鶉農業協同組合</li>
-                            <li>サンフィッシュキノ</li>
-                            <li>DROOM CAFE</li>
-                            <li>Super Rico</li>
+                            <li class="has-detail shop-item-modal" data-shop-id="danoncafe">
+                                <span class="shop-name">Danon Cafe (ダノンカフェ)</span>
+                                <span class="shop-detail">クロッフル各種、ドリンク各種</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="bamboojockey">
+                                <span class="shop-name">BAMBOO JOCKEY</span>
+                                <span class="shop-detail">ガーリックシュリンプ</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="superrico">
+                                <span class="shop-name">SUPER RICO</span>
+                                <span class="shop-detail">タコス</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="raglankitchen">
+                                <span class="shop-name">ラグラン キッチン</span>
+                                <span class="shop-detail">Fish＆CHIP、ポテト</span>
+                            </li>
+
+                            <li class="has-detail shop-item-modal" data-shop-id="kosukitchen">
+                                <span class="shop-name">コスキッチん</span>
+                                <span class="shop-detail">日本縦断カレー、自家製タンドリーチキン</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="suzuhiro">
+                                <span class="shop-name">唐揚げのスズヒロ</span>
+                                <span class="shop-detail">唐揚げ、ロングポテト、綿飴</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="ruggine">
+                                <span class="shop-name">ルッジネ</span>
+                                <span class="shop-detail">薪窯ピッツァ</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="radlandpicnic">
+                                <span class="shop-name">RAD LAND PICNIC</span>
+                                <span class="shop-detail">ハンバーガー</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="19banhole">
+                                <span class="shop-name">19番ホール</span>
+                                <span class="shop-detail">出来立てアツアツの唐揚げ</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="ndon">
+                                <span class="shop-name">ンドン</span>
+                                <span class="shop-detail">うどん、天ぷら</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="spicecurrydamp">
+                                <span class="shop-name">SPICE CURRY だんぷ</span>
+                                <span class="shop-detail">スパイスカレー、ラッシー等のドリンク販売</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="uncreme">
+                                <span class="shop-name">un crème</span>
+                                <span class="shop-detail">クレープ各種</span>
+                            </li>
+
+                            <li class="has-detail shop-item-modal" data-shop-id="toyohashiuzura">
+                                <span class="shop-name">豊橋養鶉農業協同組合</span>
+                                <span class="shop-detail">うずら卵、うずら水煮、うずら味つけ水煮販売</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="sunfishkino">
+                                <span class="shop-name">サンフィッシュキノ</span>
+                                <span class="shop-detail">マグロのメンチカツ、イカ焼き</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="droomcafe">
+                                <span class="shop-name">DROOM CAFE</span>
+                                <span class="shop-detail">ドリンク各種、アパレル雑貨</span>
+                            </li>
+
                             <li class="has-detail shop-item-modal" data-shop-id="ohumyapple">
                                 <span class="shop-name">Oh!UMyAPPLE</span>
                                 <span class="shop-detail">りんご飴、りんごグミ</span>
                             </li>
-                            <li>フクフクマフィンズ</li>
-                            <li>菓匠 hiyori</li>
-                            <li>halmeoni (はるもに)</li>
-                            <li>gluck bagel</li>
-                            <li>PATISSERIE M.</li>
-                            <li>黄金干し芋</li>
-                            <li>にこふぁーむ</li>
-                            <li>てんとコーヒー</li>
+                            <li class="has-detail shop-item-modal" data-shop-id="paki">
+                                <span class="shop-name">paki（パキ）</span>
+                                <span class="shop-detail">豚汁・フランクフルト・植物販売</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="fukufukumuffins">
+                                <span class="shop-name">fuku fuku muffins</span>
+                                <span class="shop-detail">からだにやさしいマフィン、焼き菓子</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="kashohiyori">
+                                <span class="shop-name">菓匠hiyori(カショウヒヨリ)</span>
+                                <span class="shop-detail">和風洋菓子(生菓子、焼き菓子)日本茶葉の販売</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="halmeoni">
+                                <span class="shop-name">halmeoni (はるもに)</span>
+                                <span class="shop-detail">シフォンケーキ販売</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="gluckbagel">
+                                <span class="shop-name">gluck bagel</span>
+                                <span class="shop-detail">ベーグル専門店</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="patisseriem">
+                                <span class="shop-name">PATISSERIE M.</span>
+                                <span class="shop-detail">焼き菓子（クッキー、ケーキ）</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="koganehoshiimo">
+                                <span class="shop-name">黄金干し芋</span>
+                                <span class="shop-detail">各種干し芋の販売</span>
+                            </li>
+                            <li class="has-detail">
+                                <span class="shop-name">にこふぁーむ</span>
+                                <span class="shop-detail">いちご</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="tentocoffee">
+                                <span class="shop-name">てんとコーヒー</span>
+                                <span class="shop-detail">ドリップコーヒーの販売</span>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="shop-category">
                         <h4>Goods & Workshop</h4>
                         <ul class="shop-list green-list">
-                            <li>alkukka.ilo</li>
-                            <li>ちゅる〜しぇ</li>
-                            <li>MAMA FLEA MARKET</li>
-                            <li>kidorico</li>
-                            <li>nicoron</li>
-                            <li>calmtto</li>
-                            <li>magocoro base</li>
+                            <li class="has-detail">
+                                <span class="shop-name">alkukka.ilo</span>
+                                <span class="shop-detail">アクセサリー</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="churushe">
+                                <span class="shop-name">ちゅる〜しぇ</span>
+                                <span class="shop-detail">占い、美容、物販</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="mamafleamarket">
+                                <span class="shop-name">MAMA FLEA MARKET</span>
+                                <span class="shop-detail">子ども服を中心としたフリーマーケット</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="pastelart">
+                                <span class="shop-name">パステル×筆文字はうす</span>
+                                <span class="shop-detail">パステルアート体験</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="kidorico">
+                                <span class="shop-name">kidorico</span>
+                                <span class="shop-detail">こども服、大人服、小物など</span>
+                            </li>
+
+                            <li class="has-detail shop-item-modal" data-shop-id="calmtto">
+                                <span class="shop-name">calmtto</span>
+                                <span class="shop-detail">キャンドル販売、ワークショップ</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="magocorobase">
+                                <span class="shop-name">magocoro base</span>
+                                <span class="shop-detail">防災ワークショップ</span>
+                            </li>
                             <li class="has-detail shop-item-modal" data-shop-id="yururi">
                                 <span class="shop-name">yururi</span>
                                 <span class="shop-detail">パーツ使い放題ワークショップ、アクセサリー販売</span>
                             </li>
-                            <li>Little Mixer</li>
-                            <li>Aroma famdog NikoMiMi</li>
-                            <li>ayakanmuri | melty me | natur</li>
-                            <li>めだかすくい</li>
-                            <li>TADANO artisan goldfish</li>
-                            <li>ディーストア</li>
-                            <li>MK banana</li>
-                            <li>株式会社 BE-SOA</li>
-                            <li>ange</li>
-                            <li>なばぎゃるまるしぇ .ism</li>
-                            <li>BELL TREE</li>
-                            <li>はぐり</li>
-                            <li>パステル × 筆文字はうす</li>
-                            <li>cocomei</li>
-                            <li>cotucotu385</li>
-                            <li>wild boar</li>
-                            <li>mino' aka</li>
-                            <li>bebe mignon</li>
+                            <li class="has-detail shop-item-modal" data-shop-id="littlemixer">
+                                <span class="shop-name">Little Mixer</span>
+                                <span class="shop-detail">ポーセラーツ作品の販売、ワークショップ</span>
+                            </li>
+
+                            <li class="has-detail shop-item-modal" data-shop-id="ayakanmuri">
+                                <span class="shop-name">ayakanmuri | melty me | natur</span>
+                                <span class="shop-detail">子供・アクセサリー・子供服・カスタムクレヨン</span>
+                            </li>
+                            <li class="has-detail">
+                                <span class="shop-name">めだかすくい</span>
+                                <span class="shop-detail">めだかすくい</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="tadano">
+                                <span class="shop-name">TADANO artisanal goldfish</span>
+                                <span class="shop-detail">きんぎょすくい</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="dddddd">
+                                <span class="shop-name">ディーストア(ディーストア)</span>
+                                <span class="shop-detail">ハンドメイド雑貨</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="mkbanana">
+                                <span class="shop-name">MK banana（エムケーバナナ）</span>
+                                <span class="shop-detail">アクセサリー、kids item</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="besoa">
+                                <span class="shop-name">株式会社 BE-SOA</span>
+                                <span class="shop-detail">ストラックアウト</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="ange">
+                                <span class="shop-name">ange</span>
+                                <span class="shop-detail">ワークショップ、手染めビーズアクセサリー販売</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="napogyaru">
+                                <span class="shop-name">なぽぎゃるまるしぇ.ism</span>
+                                <span class="shop-detail">こども向けワークショップ（大人も可）</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="belltree">
+                                <span class="shop-name">BELL TREE</span>
+                                <span class="shop-detail">手形足形アートのワークショップ</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="haguri">
+                                <span class="shop-name">はぐり</span>
+                                <span class="shop-detail">ドライフラワー、かんなくずディフューザー、小物</span>
+                            </li>
+
+                            <li class="has-detail shop-item-modal" data-shop-id="cocomei">
+                                <span class="shop-name">cocomei</span>
+                                <span class="shop-detail">ウッドバーニング名入れ、韓国スライムws</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="cotucotu385">
+                                <span class="shop-name">cotucotu385</span>
+                                <span class="shop-detail">羊毛フェルト雑貨</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="wildboar">
+                                <span class="shop-name">wild boar(ワイルドボア)</span>
+                                <span class="shop-detail">布小物、アクセサリー等</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="minoaka">
+                                <span class="shop-name">mino'aka</span>
+                                <span class="shop-detail">パラコードグッズ</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="bebemignon">
+                                <span class="shop-name">bebe mignon</span>
+                                <span class="shop-detail">ベビー、キッズ、ママアイテム</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="aromafamdog">
+                                <span class="shop-name">Aroma_famdog NikoMiMi</span>
+                                <span class="shop-detail">耳つぼジュエリー、デコミラー/キーホルダー/デコヘアピンWS</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="nicoron">
+                                <span class="shop-name">nicoron</span>
+                                <span class="shop-detail">ファーストアート&フィンガーアート</span>
+                            </li>
                             <li class="has-detail shop-item-modal" data-shop-id="honuart">
                                 <span class="shop-name">HONUART</span>
                                 <span class="shop-detail">ディンプルアート体験</span>

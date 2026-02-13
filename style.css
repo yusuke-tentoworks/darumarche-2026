@@ -217,41 +217,210 @@ a:hover {
 .hero {
     position: relative;
     width: 100%;
-    height: auto;
-    background-color: #fff;
+    height: 100vh;
+    /* Full screen height */
+    min-height: 600px;
+    background-color: var(--color-bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
-    z-index: 10;
 }
 
-.hero-image-container {
+/* Hero Background Animation: Falling Sakura */
+.hero-petal {
+    position: absolute;
+    top: -10%;
+    /* Start above viewport */
+    background-color: #ffd1dc;
+    border-radius: 100% 0 100% 0;
+    /* Petal shape */
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+    animation-name: fall, sway;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: normal, alternate;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sway {
+    0% {
+        margin-left: -50px;
+    }
+
+    100% {
+        margin-left: 50px;
+    }
+}
+
+.hero-image-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    line-height: 0;
-    /* 画像下の隙間削除 */
+    height: 100%;
+    z-index: 2;
+    /* Above bg-effect, below text */
 }
 
 .hero-flyer-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    vertical-align: bottom;
 }
 
-/* Overlay styles removed */
-.hero-overlay,
-.hero-details {
-    display: none;
+.hero-container {
+    position: relative;
+    z-index: 3;
+    /* Above image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* Old hero content styles suppressed/removed */
-.hero-bg,
-.hero-content,
-.hero-logo,
-.hero-text-group,
-.hero-date,
-.hero-time,
-.hero-location,
-.hero-catch {
-    display: none;
+/* Removed dedicated .hero-image-container styles as it's replaced by .hero-image-layer */
+
+.hero-text-content {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    /* Remove background box styles */
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    /* Add text shadow for legibility and impact */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-title {
+    font-size: 5rem;
+    /* Increased size */
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    /* Strong white outline and drop shadow for maximum readability */
+    text-shadow:
+        3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff,
+        2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+        3px 3px 0 #fff,
+        0 5px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+}
+
+.hero-title .year {
+    font-family: var(--font-body);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 1rem;
+    color: var(--color-text);
+    vertical-align: middle;
+    text-shadow: 2px 2px 0 #fff;
+}
+
+.hero-info {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+.hero-date {
+    font-size: 4rem;
+    /* Increased size */
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0 #fff, 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-date .day {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    color: var(--color-text);
+}
+
+.hero-time {
+    font-size: 2.5rem;
+    /* Increased size */
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 0 #fff, 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-location {
+    font-size: 3rem;
+    /* Increased size */
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    text-shadow: 2px 2px 0 #fff, 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-note {
+    font-size: 1.2rem;
+    opacity: 1;
+    /* consistent visibility */
+    margin-top: 1.5rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Small bg for note only */
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-title .year {
+        font-size: 1.2rem;
+    }
+
+    .hero-date {
+        font-size: 2.5rem;
+    }
+
+    .hero-time {
+        font-size: 1.8rem;
+    }
+
+    .hero-location {
+        font-size: 2rem;
+    }
+
+    .hero-text-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+display: none;
 }
 
 /* Animations */
@@ -733,15 +902,31 @@ a:hover {
 }
 
 .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 2rem;
-    background: none;
+    position: sticky;
+    top: 0;
+    right: 0;
+    margin: -2rem -2rem 0 auto;
+    /* Pull to top-right corner over padding */
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
     border: none;
+    border-radius: 0 0 0 15px;
     cursor: pointer;
     color: #333;
     line-height: 1;
+    z-index: 10;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.modal-close:hover {
+    background: rgba(200, 58, 64, 0.1);
+    color: var(--color-primary);
 }
 
 .modal-body {
@@ -1236,4 +1421,29 @@ a:hover {
 
 .delay-300 {
     transition-delay: 0.3s;
+}
+
+/* Chuzania Highlight Styles */
+.shop-list li.is-chuzania {
+    border: 3px solid var(--color-accent);
+    /* Gold border */
+    position: relative;
+    background-color: #fffaf0;
+    /* Slight tint */
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+}
+
+.shop-list li.is-chuzania::before {
+    content: "チュッザニア対象";
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
