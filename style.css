@@ -311,6 +311,7 @@ a:hover {
     /* Petal shape */
     opacity: 0.8;
     z-index: 1;
+    /* ★花びら最背面 */
     pointer-events: none;
     animation-name: fall, sway;
     animation-timing-function: linear, ease-in-out;
@@ -342,18 +343,20 @@ a:hover {
 
 .hero-image-layer {
     position: absolute;
-    top: 0;
+    top: 60px;
+    /* ★ヘッダーの高さ分を下げ、中央位置をコンテナと完璧に同期 */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     z-index: 2;
-    /* Above bg-effect, below text */
+    /* ★花びらの上、ロゴの下 */
 }
 
 .hero-flyer-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    /* ★ポスターが全体表示されるようB案に対応 */
     object-position: center;
     display: block;
 }
@@ -386,34 +389,30 @@ a:hover {
 }
 
 .hero-logo-img {
-    width: 90%;
-    max-width: 700px;
+    width: 85%;
+    max-width: 650px;
     height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 
-    /* 位置を絶対配置で確実に指定する */
+    /* ★ポスター中央を基準とし、自身の高さを元に上にズラすことで画面サイズによる崩れを防止 */
     position: absolute;
-    top: 52%;
-    /* 先ほどの48%からさらにほんの少し下げるため52%に調整 */
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* 自身のサイズを考慮して中央揃え */
+    transform: translate(-50%, -65%);
     z-index: 4;
 }
 
 .hero-info-img {
     width: 60%;
-    max-width: 350px;
+    max-width: 320px;
     height: auto;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 
-    /* 下部の見切れを防ぐための確実な配置 */
+    /* ★ポスター中央を基準とし、自身の高さを元に下にズラすことで崩れを防止 */
     position: absolute;
-    bottom: 30px;
-    /* 親要素の一番下から確実に30px浮かす */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    /* 左右の中央揃え */
+    transform: translate(-50%, 80%);
     z-index: 4;
 }
 
@@ -421,29 +420,21 @@ a:hover {
 @media (max-width: 768px) {
     .hero-container {
         padding: 0 1rem;
-        /* height: 100%; が高さ0に潰れる原因だったため削除 */
-    }
-
-    .hero-content {
-        /* justify-content: center; */
-        /* padding-top: 5vh; */
-        /* スマホ用 */
     }
 
     .hero-logo-img {
-        width: 100%;
+        width: 95%;
         max-width: none;
-        /* margin-bottom: 2rem; */
         top: 50%;
-        /* スマホ時も少し下へ微調整 (重なり防止のため少しだけ上) */
+        transform: translate(-50%, -60%);
+        /* スマホも中央基準 */
     }
 
     .hero-info-img {
-        width: 80%;
-        /* margin-bottom: 4rem; */
-        bottom: 20px;
-        /* スマホ時は下からの余白を少しだけ狭める */
-
+        width: 75%;
+        top: 50%;
+        transform: translate(-50%, 65%);
+        /* スマホも中央基準 */
     }
 }
 
