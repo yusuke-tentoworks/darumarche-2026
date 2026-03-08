@@ -289,16 +289,14 @@ a:hover {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    /* スマホブラウザのアドレスバー高さを考慮 */
+    /* 高さはmin-heightに縛られず、画像自体の比率に任せます */
     background-color: var(--color-bg);
     overflow: hidden;
     display: flex;
-    flex-direction: column;
-    /* flex-growで子要素を伸ばすため */
-    padding: 60px 0 0;
-    /* Add top padding to account for fixed header */
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 20px;
+    /* ヘッダーの高さ分の余白と下部の余白 */
 }
 
 /* Hero Background Animation: Falling Sakura */
@@ -310,7 +308,8 @@ a:hover {
     border-radius: 100% 0 100% 0;
     /* Petal shape */
     opacity: 0.8;
-    z-index: 1;
+    z-index: 10;
+    /* 画像の上に降るように数値を上げる */
     pointer-events: none;
     animation-name: fall, sway;
     animation-timing-function: linear, ease-in-out;
@@ -340,71 +339,57 @@ a:hover {
     }
 }
 
-.hero-image-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    /* Above bg-effect, below text */
-}
-
-.hero-flyer-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* ポスター画像が切れずに全体表示されるように大きく変更（B案） */
-    object-position: center;
-    display: block;
-    /* 背景との境界線を馴染ませるか、背景色をポスターに合わせるとより綺麗です */
-    background-color: var(--color-bg);
-}
-
 .hero-container {
     position: relative;
     z-index: 3;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
     width: 100%;
     max-width: 1200px;
-    flex-grow: 1;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
-.hero-content {
-    width: 100%;
-    flex-grow: 1;
+.hero-poster-wrapper {
     position: relative;
+    width: 100%;
+    max-width: 900px;
+    /* PCでは大きくなりすぎないように制限 */
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.hero-flyer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* object-fit: contain のようなはみ出ない設定を img タグ自体のスケーリングで実現 */
 }
 
 .hero-logo-img {
-    width: 85%;
-    max-width: 600px;
+    width: 80%;
+    max-width: 550px;
     height: auto;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-    /* 視認性を上げるため影を少し濃く */
 
     position: absolute;
     top: 40%;
-    /* ポスターの中央の文字を避けるため少し上へ配置 */
+    /* ポスター内の文字と被りすぎない絶妙な位置（親の高さを基準） */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
 }
 
 .hero-info-img {
-    width: 55%;
+    width: 50%;
     max-width: 320px;
     height: auto;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 
     position: absolute;
-    bottom: 40px;
-    /* 下からの距離を少し上げる */
+    bottom: 5%;
+    /* 親要素の高さに応じた一定の余白 */
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
@@ -412,22 +397,25 @@ a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .hero {
+        padding: 60px 0 0;
+    }
+
     .hero-container {
-        padding: 0 1rem;
+        padding: 0;
+        /* スマホは画面いっぱいまで広げる */
     }
 
     .hero-logo-img {
-        width: 95%;
+        width: 90%;
         max-width: none;
         top: 35%;
-        /* スマホ時も文字被りを避けるために調整 */
+        /* スマホでも同様の比率で文字被りを避ける */
     }
 
     .hero-info-img {
-        width: 75%;
-        bottom: 30px;
-        /* スマホ時は下からの余白を少しだけ狭める */
-
+        width: 70%;
+        bottom: 5%;
     }
 }
 
