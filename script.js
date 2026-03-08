@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 imgContainer.className = 'gallery-item';
 
                 const img = document.createElement('img');
-                img.src = `images/gallery-2025-${imgNum}.jpg`; // Optimized JPG
+                img.src = `images/gallery-2025-${imgNum}.webp`; // Optimized JPG
                 img.alt = `Gallery Image 2025-${imgNum}`;
                 img.loading = 'lazy';
 
@@ -130,12 +130,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Shop Detail Modal
     const shopData = {
+        "nicofarm": {
+            name: "にこふぁーむ",
+            detail: "いちご",
+            description: "",
+            chuzania: "",
+            image: "images/nico-farm.webp",
+            instagram: ""
+        },
+        "medakasuku1": {
+            name: "めだかすくい",
+            detail: "めだかすくい",
+            description: "",
+            chuzania: "",
+            image: "images/shop-medaka.webp",
+            instagram: ""
+        },
+        "alkukkailo": {
+            name: "alkukka.ilo(アルクッカイロ)",
+            detail: "感覚感じるアクセサリー",
+            description: "持ってる人が軽くなり、ラッキーがやってるくる！そんなアクセサリーを作っています♪\nお久しぶりの出店になります、みなさんにお会いできるのを楽しみにしています！",
+            chuzania: "お買い上げアイテムを袋詰めしてお渡ししよう体験：50チュ",
+            image: "images/shop-alkukka.ilo.webp",
+            instagram: "https://www.instagram.com/alkukka.ilo_saori/"
+        },
         "honuart": {
             name: "HONUART",
             detail: "ディンプルアート体験",
             description: "車のフロントガラスのリサイクルから生まれた絵の具を使って塗るディンプルアート！原料が廃材からできているので、描けば描く程、ゴミが減らせる地球に優しい新アートが体験できます。\n塗り絵のように塗ったり、色を混ぜてみたり、新感覚で面白いアート！乾くと自然と現れる凸凹模様も何とも不思議。\n見本通りだっていい‼見本と違ったっていい‼自分で決めて作るから、世界に一つの自分だけの宝物が出来上がりますよ✨是非是非体験しに来てください🌈",
             chuzania: "画家さん体験：50チュ",
-            image: "images/shop-honuart.jpg",
+            image: "images/shop-honuart.webp",
             instagram: "https://www.instagram.com/dimpleart_honuart/"
         },
         "ohumyapple": {
@@ -143,15 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "りんご飴、りんごグミ",
             description: "青森、北海道の農家さん厳選の今1番美味しいりんごを使用した華やかなりんご飴。季節に応じた限定のメニューも揃えています。パリッとジューシーなりんご飴ぜひご賞味ください。",
             chuzania: "",
-            image: "images/shop-ohumyapple.jpg",
+            image: "images/shop-ohumyapple.webp",
             instagram: "https://www.instagram.com/ohumyapple/"
         },
         "yururi": {
             name: "yururi (ユルリ)",
             detail: "パーツ使い放題ワークショップ、アクセサリー販売",
             description: "世界で1つのオリジナルアクセサリーが作れるパーツ使い放題のワークショップを開催します♡\nパーツを選んだらあとはお手伝いしますので、自分だけの”かわいい”を詰め込んだアクセサリーが簡単に作れます！\nかわいいパーツやプラスで付けられるモコモコ&キーホルダーは毎回人気なので欲しい色やデザインが無くなってしまうことも！\n気になる方はお早めにお越しくださいね♪\nアクセサリー販売もしますのでお子さまもmama達もぜひ遊びに来てください♡",
-            chuzania: "世界で1つのオリジナルアクセサリー作り：ヘアピン10チュ、イヤリング&キーホルダー30チュ",
-            image: "images/shop-yururi.jpg",
+            chuzania: "世界で1つのオリジナルアクセサリー作り\nヘアピン：10チュ\nイヤリング&キーホルダー：30チュ",
+            image: "images/shop-yururi.webp",
             instagram: "https://www.instagram.com/yururi06_f/"
         },
         "minitoyohashi": {
@@ -159,15 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "車両展示",
             description: "輸入車ブランドMINIの正規ディーラーです。フルモデルチェンジで進化した新型MINI。ＥＶモデルや新しいSUVモデルのカントリーマンも展示するのでお気軽にお立ち寄りください。",
             chuzania: "",
-            image: "images/shop-mini-toyohashi.png",
+            image: "images/shop-mini-toyohashi.webp",
             instagram: "https://www.instagram.com/mini_toyohashi/"
         },
         "besoa": {
             name: "株式会社 BE-SOA",
-            detail: "ストラックアウト",
-            description: "狙え❗️蹴れ❗️抜け❗️⚽️ストラックアウト‼️\n子どもも大人も挑戦OK🙆♂️\nイベント名物！ストラックアウト登場✨",
+            detail: "キックターゲット",
+            description: "狙え❗️蹴れ❗️抜け❗️⚽️キックターゲット‼️\n子どもも大人も挑戦OK🙆\nイベント名物！キックターゲット登場✨",
             chuzania: "",
-            image: "images/shop-be-soa.jpg",
+            image: "images/shop-be-soa.webp",
             instagram: ""
         },
         "suzuhiro": {
@@ -175,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "唐揚げ、ロングポテト、綿飴",
             description: "ザクッ！ジュワ！ウマ！\n大きい唐揚げです。",
             chuzania: "",
-            image: "images/shop-suzuhiro.jpg",
+            image: "images/shop-suzuhiro.webp",
             instagram: "https://www.instagram.com/suzuhiro_aozorahanbai/"
         },
         "minoaka": {
@@ -183,23 +207,31 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "パラコードグッズ",
             description: "パラコードで編んだわんこグッズ、スマホショルダーなどを作っています。\n毎日に彩りを添えるアイテムを見て頂けたら嬉しいです😊\n〜ミノアカ〜 \n人とわんこのパラコード屋さん",
             chuzania: "",
-            image: "images/shop-minoaka.jpg",
+            image: "images/shop-minoaka.webp",
             instagram: "https://www.instagram.com/minoaka_paracord/"
         },
         "ayakanmuri": {
-            name: "ayakanmuri | melty me | natur",
-            detail: "子供・アクセサリー・子供服・カスタムクレヨン",
-            description: "natur：カラフルでどこから描いても色とりどり可愛いクレヨンを販売してます🖍️\nayakanmuri：自分で選んで、楽しく作れるキーホルダーと新感覚のキラジャラヘアアクセのワークショップ屋さんです\nmeltyme ：小物や子供のお洋服を作っております。ワンピースは夏でも冬でも中のお洋服次第で調節できます。",
-            chuzania: "natur：購入した商品を袋に詰めるお手伝い：50チュ\nayakanmuri：モデル体験：50チュ\nmeltyme：購入したお洋服を袋につめるお手伝い：50チュ\nわたあめカップキーホルダーワークショップ：100チュ\nキラじゃらヘアアクセワークショップ：50チュ",
-            image: "images/shop-ayakanmuri-combined.jpg",
-            instagram: "https://www.instagram.com/____lily.twinkle/"
+            name: "ayakanmuri | melty me（あやかんむり　めるてぃーみー）",
+            detail: "子供服、アクセサリー、ワークショップ",
+            description: "ayakanmuri：自分で選んで、楽しく作れるキーホルダーと新感覚のキラジャラヘアアクセのワークショップ屋さんです\nmeltyme ：小物や子供のお洋服を作っております。ワンピースは夏でも冬でも中のお洋服次第で調節できます。",
+            chuzania: "わたあめカップキーホルダー 950円：100チュ\nキラじゃらヘアアクセ 850円：50チュ\nayakanmuriのアクセサリーを購入してその場で身につけてくれた子にモデル料：50チュ\nmeltymeで購入したお洋服を袋につめるお手伝い：50チュ",
+            image: "images/ayakanmuri-melty me.webp",
+            instagram: "https://www.instagram.com/ayakanmuri/\nhttps://www.instagram.com/melty_me_22/"
+        },
+        "natur": {
+            name: "natur | Lily.twinkle（ナチュール　リリートゥインクル）",
+            detail: "カスタムクレヨン、子供服、小物",
+            description: "カラフルでどこから描いても色とりどり可愛いクレヨンを販売してます🖍️",
+            chuzania: "lily.twinkleで購入した商品を袋に詰めるお手伝い：50チュ",
+            image: "images/shop-natur-Lily.twinkle.webp",
+            instagram: "https://www.instagram.com/natur_52/\nhttps://www.instagram.com/____lily.twinkle/"
         },
         "kidorico": {
             name: "kidorico",
             detail: "こども服、大人服、小物など",
             description: "肌触りの良いコットンやリネンの天然素材を使用し、こども服、おとな服など製作販売しています。\n日常着にも、特別なときにも…。\nシンプルな中にもこだわった、どこかかわいいItemをお届けできたらなと思っています。",
             chuzania: "",
-            image: "images/shop-kidorico.jpg",
+            image: "images/shop-kidorico.webp",
             instagram: "https://www.instagram.com/kidorico/"
         },
         "cocomei": {
@@ -207,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ウッドバーニング名入れ、韓国スライムws",
             description: "【ウッドバーニング】\n愛知県岡崎市でウッドバーニング作家として活動しておりますcocomeiです。木製カトラリーや木製お皿や器、おもちゃなどへの絵や名前の焼き入れをします！\n赤ちゃんから大人、そしてペットと家族みんなに喜んでいただける商品を扱っております。\nその場で絵や名前を焼き入れています！\n\n【韓国スライムワークショップ】\n子どもたちに大人気のスライムデコレーション！あらかじめケースに入っているかためのクリアなスライムに、色付けやパーツやラメを好きに入れてオリジナルスライムが作れます！パーツは入れ放題！",
             chuzania: "",
-            image: "images/shop-cocomei.jpg",
+            image: "images/shop-cocomei.webp",
             instagram: "https://www.instagram.com/cocomei8/"
         },
         "magocorobase": {
@@ -215,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "防災ワークショップ",
             description: "#防災をカジュアルに\n\nワークショップを通じて、\n防災を身近で楽しいものに\nチェンジしてみませんか？  \n\n---\n\n🪄リメイク缶バッジワークショップ\n\nお菓子の袋やペットボトルのラベル、\n包装紙などを再利用して、\nオリジナル缶バッジを作りましょう！  \nリサイクルを通じて、\n環境への配慮や防災について考えるきっかけに💫\n意外におしゃれな仕上がりになるので\n子どもにも大人にも大人気！\n\n⭐素材のお持ち込みOK！\nお気に入りのラベルや紙袋がありましたら\nぜひお持ちください😊\n\n対象素材：プラスチック\n(お菓子の袋、ペットボトルのラベルなど)、\n紙（新聞紙・チラシ・包装紙など）  \n使用不可：シワが強いもの、厚手の箱素材",
             chuzania: "",
-            image: "images/shop-magocoro-base.jpg",
+            image: "images/shop-magocoro-base.webp",
             instagram: "https://www.instagram.com/magocorobase71/"
         },
         "littlemixer": {
@@ -223,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ポーセラーツ作品の販売、ワークショップ",
             description: "ポーセラーツサロンLittle Mixerです♡\n大人可愛い食器、またお子様用の食器を販売しています☻\n当日はワークショップも開催します！\n100種類以上ある転写紙(シール)の中から、お好みの柄を選んで、オリジナルの食器をお作り頂けます♡\n小さなお子様でも簡単にお作り頂けますので、ぜひご参加下さい♩",
             chuzania: "ポーセラーツワークショップ：50チュ",
-            image: "images/shop-little-mixer.jpg",
+            image: "images/shop-little-mixer.webp",
             instagram: "https://www.instagram.com/little_mixer.12/"
         },
         "gluckbagel": {
@@ -231,15 +263,15 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ベーグル専門店",
             description: "柔らかいもちもち、メニューは日替わりで\n四季折々旬のも果物や野菜など使用\n一度た食べたら幸せいっぱいになります",
             chuzania: "",
-            image: "images/shop-gluckbagel.jpg",
+            image: "images/shop-gluckbagel.webp",
             instagram: "https://www.instagram.com/pankosaeko/"
         },
         "belltree": {
             name: "BELL TREE",
             detail: "手形足形アートのワークショップ",
             description: "手形足形アートのワークショップ\n\nお子さまの『今』しかない大きさの手形、足形をかわいくアートにして残しませんか？\n家族みんなで作れるファミリーアートも大人気‼\nプレゼントにも大変喜ばれます。\n家族みんなでぜひぜひ遊びにきてください♡",
-            chuzania: "ワークショップで出来上がった作品の袋詰め体験：手形、足形１つ50チュ、ファミリーアート100チュ",
-            image: "images/shop-belltree.jpg",
+            chuzania: "ワークショップで出来上がった作品の袋詰め体験\n手形、足形１つ：50チュ\nファミリーアート：100チュ",
+            image: "images/shop-belltree.webp",
             instagram: "https://www.instagram.com/bell_tree.222/"
         },
         "halmeoni": {
@@ -247,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "シフォンケーキ販売",
             description: "シフォンケーキ販売\n\n年に数回のマルシェとご予約注文のみの店舗のないシフォンケーキ屋。豊橋市駒形町「渚ギャラリー」併設喫茶のシフォンも担当しています。小麦粉・米粉どちらもあり。だるまルシェでは春限定のさくらシフォンを準備してお待ちしています。",
             chuzania: "",
-            image: "images/shop-halmeoni.jpg",
+            image: "images/shop-halmeoni.webp",
             instagram: "https://www.instagram.com/halmeoni_mai/"
         },
         "napogyaru": {
@@ -255,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "こども向けワークショップ（大人も可(OK)）",
             description: "初めて〘だるマルシェさん〙に出店させていただきます、ワークショップのなぽぎゃるまるしぇ.ismです🐣\nデコパーツやホイップクリームを使って世界に1つだけのオリジナル商品を作っていただけます。\nキャンディバックをはじめ色々な雑貨・文具・ヘアアクセなど用意、たくさんのパーツからお気に入りを選んで可愛くデコってオリジナルアイテムを作りましょう♡遊びに来て下さいね♡",
             chuzania: "ホイップデコ商品作り体験：50チュ",
-            image: "images/shop-napogyaru.jpg",
+            image: "images/shop-napogyaru.webp",
             instagram: "https://www.instagram.com/napogyaru_marche.tb127/"
         },
         "tadano": {
@@ -263,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "きんぎょすくい",
             description: "丈夫でかわいい金魚たちをペットにしてみませんか？珍しい品種、かわいい柄、他ではなかなかお目にかかれない金魚たちをぜひ見に来てください！\n飼えないけどすくってみたい、も大歓迎です！\n優しくすくうとたくさんすくえますよ♪",
             chuzania: "",
-            image: "images/shop-tadano.jpg",
+            image: "images/shop-tadano.webp",
             instagram: "https://www.instagram.com/tadanoartisanalgoldfish/"
         },
         "raglankitchen": {
@@ -271,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "Fish＆CHIP、ポテト",
             description: "ホクホクなポテトをお楽しみ頂けます。\n看板メニューのFish＆CHIPも、ぜひご賞味ください！",
             chuzania: "",
-            image: "images/shop-raglankitchen.jpg",
+            image: "images/shop-raglankitchen.webp",
             instagram: "https://www.instagram.com/raglan.kitchen/"
         },
         "calmtto": {
@@ -279,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "キャンドル販売、ワークショップ",
             description: "せわしなく進んでいく日常に、ほっとできるひと時を感じて頂きたい。素敵な空間作りのお手伝いができたらうれしいです。\n当日は、お子様も楽しめるワークショップを予定しております。ぜひ遊びにきてください。",
             chuzania: "キャンドル作りワークショップ：20チュ",
-            image: "images/shop-calmtto.jpg",
+            image: "images/shop-calmtto.webp",
             instagram: "https://www.instagram.com/calmtto/"
         },
         "paki": {
@@ -287,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "豚汁・フランクフルト・植物販売",
             description: "コウモリランや苔玉などの植物販売と、\nトレーラーで豚汁などを販売します！！\nよろしくお願いします♪",
             chuzania: "",
-            image: "images/shop-paki.jpg",
+            image: "images/shop-paki.webp",
             instagram: "https://www.instagram.com/paki0619/"
         },
         "droomcafe": {
@@ -295,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ドリンク各種、アパレル雑貨",
             description: "こだわりのコーヒー、各種ドリンクを飲みながらアパレル雑貨をご覧になれるキッチンカーです、よろしくお願い致します",
             chuzania: "",
-            image: "images/shop-droomcafe.jpg",
+            image: "images/shop-droomcafe.webp",
             instagram: "https://www.instagram.com/droom_cafe0.4/"
         },
         "mamafleamarket": {
@@ -303,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "子ども服を中心としたフリーマーケット",
             description: "豊橋豊川を中心に子育てママ達によるフリーマーケットを運営しております！物を大切に繋げていきませんか？🧺♡\n運営の皆さま、出店者様、今年度も参加することができ光栄です🌸よろしくお願いいたします☺️",
             chuzania: "",
-            image: "images/shop-mamafleamarket.jpg",
+            image: "images/shop-mamafleamarket.webp",
             instagram: "https://www.instagram.com/__mama__fleamarket/"
         },
         "pastelart": {
@@ -311,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "パステルアート体験",
             description: "パステルという画材を使ったアート体験ができます。削って粉にして指でくるくる。誰でも簡単に優しい色合いの絵が描く事ができます。お子さんも大人の方もお選びいただけるモチーフをご用意しています。",
             chuzania: "パステルアートワークショップ：50チュ",
-            image: "images/shop-pastelart.jpg",
+            image: "images/shop-pastelart.webp",
             instagram: "https://www.instagram.com/pastel3art/"
         },
         "tentocoffee": {
@@ -319,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ドリップコーヒーの販売",
             description: "自家焙煎コーヒーで、しあわせをおとどけ。",
             chuzania: "コーヒー豆焙煎体験：50チュ",
-            image: "images/shop-tentocoffee.jpg",
+            image: "images/shop-tentocoffee.webp",
             instagram: "https://www.instagram.com/tentocoffee_2021/"
         },
         "ange": {
@@ -327,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ワークショップ、手染めビーズアクセサリー販売",
             description: "ホイップクリームみたいに可愛いホイップデコアートとめじるアクセサリー付きハーバリウムボトルのワークショップ🤍\nパーツを選んで、自分だけの「可愛い」を詰め込んだオリジナル作品をお作りいただけます✨\nお子さまから大人の方まで初めての方も安心してお作り頂けます🤍",
             chuzania: "インテリア小物づくりワークショップ：50チュ",
-            image: "images/shop-ange.jpg",
+            image: "images/shop-ange.webp",
             instagram: "https://www.instagram.com/ange7ka/"
         },
         "spicecurrydamp": {
@@ -335,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "スパイスカレー、ラッシー等のドリンク販売",
             description: "あいちのかおり米に合うもったり感のあるグルテンフリーのスパイスカレーをお届けします。",
             chuzania: "",
-            image: "images/shop-spicecurrydamp.jpg",
+            image: "images/shop-spicecurrydamp.webp",
             instagram: "https://www.instagram.com/spicecurry_damp/"
         },
         "uncreme": {
@@ -343,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "クレープ各種",
             description: "『シンプルに美味しいモノ』をコンセプトに焼き立てにこだわり、季節の食材とクリームを合わせた手作りクレープを提供致します。",
             chuzania: "",
-            image: "images/shop-uncreme.jpg",
+            image: "images/shop-uncreme.webp",
             instagram: "https://www.instagram.com/un.creme/"
         },
         "bebemignon": {
@@ -351,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ベビー、キッズ、ママアイテム",
             description: "bebe mignonです。\n母娘でベビー用品を販売していますベビースタイ、ベビーリュックなどのべビー商品からヘアピン、つけ襟などキッズ商品更にマザーズバック、ポーチなど大人が使えるアイテム、お祝いにもおすすめですので是非お待ちしています。",
             chuzania: "",
-            image: "images/shop-bebemignon.jpg",
+            image: "images/shop-bebemignon.webp",
             instagram: "https://www.instagram.com/bebe.mignon1012/"
         },
         "nicoron": {
@@ -359,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ファーストアート&フィンガーアート",
             description: "生まれて初めて作るファーストアート！初めてじゃなくても、手先を使い世界にひとつしかないアートを作るフィンガーアート🎨手が汚れずお好きな色でアートを作ります。babyだけでなくkidsや大人の方も楽しめる、心にも形にも残る素敵なアートです♪\n(※アクリル絵の具をしようします。キャンバスに出す際など汚れることがあるため、汚れても良い服をおすすめしております。)",
             chuzania: "ファーストアートワークショップ：50チュ",
-            image: "images/shop-nicoron.jpg",
+            image: "images/shop-nicoron.webp",
             instagram: "https://www.instagram.com/nicoron_babylesson/"
         },
         "patisseriem": {
@@ -367,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "焼き菓子（クッキー、ケーキ）",
             description: "PATISSERIE M.では厳選した、\n◎北海道産の小麦粉\n◎きび砂糖\n◎よつ葉バター\n◎北海道産発酵バター\n◎オーガニックオートミール\n◎オーガニックプレッツェル\nを使用しています。（お菓子によっては粉砂糖やグラニュー糖を使用する場合もございます）\nなるべく身体に優しい材料で美味しいおやつを𓂃.◌𓈒𖡼𓂂𓏲𓆸܀\nおいしい焼き菓子で小さな幸せをお届けします𓂃𓋪◌",
             chuzania: "",
-            image: "images/shop-patisseriem.jpg",
+            image: "images/shop-patisseriem.webp",
             instagram: "https://www.instagram.com/patisserie__m.__/"
         },
         "sunfishkino": {
@@ -375,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "マグロのメンチカツ、イカ焼き",
             description: "浜松で魚屋さんをやっています。久しぶりに出店させてもらうのでワクワクしてます。よろしくお願いしまーす",
             chuzania: "",
-            image: "images/shop-sunfishkino.jpg",
+            image: "images/shop-sunfishkino.webp",
             instagram: "https://www.instagram.com/sunfishkino/"
         },
         "toyohashiuzura": {
@@ -383,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "うずら卵、うずら水煮、うずら味つけ水煮販売",
             description: "愛知県豊橋市は、うずら卵の生産量日本一。\nうずら卵、うずら水煮の販売はもちろん、うずら味つけ水煮21種類あるのは、豊橋養鶉農業協同組合だけ！うずら卵のピクルスも販売します！",
             chuzania: "",
-            image: "images/shop-toyohashiuzura.jpg",
+            image: "images/shop-toyohashiuzura.webp",
             instagram: "https://www.instagram.com/toyohashi_uzura/"
         },
         "fukufukumuffins": {
@@ -391,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "からだにやさしいマフィン、焼き菓子",
             description: "国産小麦・粗製糖・米油・有機豆乳を使った、からだにやさしいマフィンを販売します。\n季節の素材を使ったマフィンを中心に、クッキー・スコーン・グラノーラ等も並びます。\n\n季節の素材やフルーツの香りを大切に、しっとりやさしいマフィンを焼いています。\nほっとする“ふくふくマフィン”をぜひお楽しみください☺🍀",
             chuzania: "",
-            image: "images/shop-fukufukumuffins.jpg",
+            image: "images/shop-fukufukumuffins.webp",
             instagram: "https://www.instagram.com/fuku_fuku_muffins/"
         },
         "ruggine": {
@@ -399,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "薪窯ピッツァ",
             description: "2023年イタリアのナポリで開催された、ナポリピッツァ世界大会出場\n食材や小麦粉を厳選して生地作りの工程や製法を日々追求しています\n是非 焼きたてのピッツァをご堪能ください",
             chuzania: "",
-            image: "images/shop-ruggine.jpg",
+            image: "images/shop-ruggine.webp",
             instagram: "https://www.instagram.com/ruggine_jp/"
         },
         "cotucotu385": {
@@ -407,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "羊毛フェルト雑貨",
             description: "羊毛フェルト雑貨\n見るたびにホッとするような、クスッと笑えるような作品作りを楽しんでいます。日々の生活の中の癒しになっていただけたらうれしいです。",
             chuzania: "",
-            image: "images/shop-cotucotu385.jpg",
+            image: "images/shop-cotucotu385.webp",
             instagram: "https://www.instagram.com/cotucotu385/"
         },
         "19banhole": {
@@ -415,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "出来立てアツアツの唐揚げ",
             description: "19番ホールでは出来立てアツアツを提供する為に注文を受けてから揚げています！が最近は冷えても美味しいと好評です！",
             chuzania: "",
-            image: "images/shop-19banhole.jpg",
+            image: "images/shop-19banhole.webp",
             instagram: "https://www.instagram.com/19banholeeee/"
         },
         "aromafamdog": {
@@ -423,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "耳つぼジュエリー、デコミラー/キーホルダー/デコヘアピンWS",
             description: "初めましてAroma_famdogです🐶🐾໊\n飼い主様わんちゃんも癒されるわんちゃん好みの香りで肉球クリームが作れます。\n万能クリーム リップクリームも作れます🌿\n耳つぼジュエリーもマルシェ価格で出店させて頂いております👂🎀*. ﾟ",
             chuzania: "",
-            image: "images/shop-aromafamdog.jpg",
+            image: "images/shop-aromafamdog.webp",
             instagram: "https://www.instagram.com/aroma_famdog/"
         },
         "kosukitchen": {
@@ -431,15 +463,15 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "日本縦断カレー、自家製タンドリーチキン",
             description: "日本で初めてキッチンカーで日本縦断したカレー屋\nもとフランス料理シェフが作るレアな欧風カレー",
             chuzania: "",
-            image: "images/shop-kosukitchen.jpg",
+            image: "images/shop-kosukitchen.webp",
             instagram: "https://www.instagram.com/kosukitchen/"
         },
         "mkbanana": {
             name: "MK banana（エムケーバナナ）",
             detail: "アクセサリー、kids item",
-            description: "#耳元を華やかに　をテーマに普段から特別な日にも楽しんで頂けるような、大ぶりのピアスを製作しています。\n個性的なモノからトレンドモノまで、たくさん用意していきますので、ぜひ！手にとって、見て頂けたら嬉しいです！\nよろしくお願いします🙇♀️🌼",
+            description: "#耳元を華やかに　をテーマに普段から特別な日にも楽しんで頂けるような、大ぶりのピアスを製作しています。\n個性的なモノからトレンドモノまで、たくさん用意していきますので、ぜひ！手にとって、見て頂けたら嬉しいです！\nよろしくお願いします🙇🌼",
             chuzania: "",
-            image: "images/shop-mkbanana.jpg",
+            image: "images/shop-mkbanana.webp",
             instagram: "https://www.instagram.com/mk_banana33/"
         },
         "danoncafe": {
@@ -447,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "クロッフル各種、ドリンク各種",
             description: "東三河を中心にトレーラータイプのキッチンカーでクロッフル&ドリンクを販売しています\nご来店お待ちしております",
             chuzania: "",
-            image: "images/shop-danoncafe.jpg",
+            image: "images/shop-danoncafe.webp",
             instagram: "https://www.instagram.com/danoncafe/"
         },
         "superrico": {
@@ -455,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "タコス",
             description: "ローカライズしないタコスと言えばSUPER RICO！",
             chuzania: "",
-            image: "images/shop-superrico.jpg",
+            image: "images/shop-superrico.webp",
             instagram: "https://www.instagram.com/super8rico/"
         },
         "wildboar": {
@@ -463,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "布小物、アクセサリー等",
             description: "キッズもママもhappyに!!!\nたくさんの笑顔がみたい!!!\nそんな思いを込めて一つーつ丁寧に製作しております。\nぜひ、お立ち寄り下さい。",
             chuzania: "スライムバック作り 50chu",
-            image: "images/shop-wildboar.jpg",
+            image: "images/shop-wildboar.webp",
             instagram: "https://www.instagram.com/wildboar00/"
         },
         "bamboojockey": {
@@ -471,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ガーリックシュリンプ",
             description: "バンブージョッキーです\nハワイ料理のガーリックシュリンプをアメリカンスクールバスでご提供してます\n味はガーリックがベースでアメリカ南部地域のスパイスのケイジャンとチーズがほのかに香るイタリアンのバジルの3種類ございます\nスクールバスは運転席を開放してるので是非遊んで行ってください",
             chuzania: "",
-            image: "images/shop-bamboojockey.jpg",
+            image: "images/shop-bamboojockey.webp",
             instagram: "https://www.instagram.com/bamboojockey/"
         },
         "churushe": {
@@ -479,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "占い、美容、物販",
             description: "占い、美容、物販",
             chuzania: "",
-            image: "images/shop-churushe.jpg",
+            image: "images/shop-churushe.webp",
             instagram: "https://www.instagram.com/churu_she/"
         },
         "haguri": {
@@ -487,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ドライフラワー、かんなくずディフューザー、小物",
             description: "初めまして、はぐりです🕊️\nドライフラワーアレンジや、かんなくずを使ったディフューザースティックなどを制作しています🪵✨\n子ども向けカスタムキーホルダーWSも開催中。\nカスタムキーホルダーWS 500〜1000円",
             chuzania: "",
-            image: "images/shop-haguri.jpg",
+            image: "images/shop-haguri.webp",
             instagram: "https://www.instagram.com/ha.gu.ri/"
         },
         "kashohiyori": {
@@ -495,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "和風洋菓子(生菓子、焼き菓子)日本茶葉の販売",
             description: "愛知県蒲郡市で完全予約制、無店舗の和風洋菓子屋をしてます\n日本の素材や伝統を洋菓子と組み合わせ、安心して食べられる\nどんな『日』でも『和』む様なお菓子をお作り致します。",
             chuzania: "",
-            image: "images/shop-hiyori.jpg",
+            image: "images/shop-hiyori.webp",
             instagram: "https://www.instagram.com/kasho_hiyori/"
         },
         "dddddd": {
@@ -503,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ハンドメイド雑貨",
             description: "色！イロ！いろ！な雑貨屋さんです✌️\n一度来てみてっ！ディーストア！",
             chuzania: "",
-            image: "images/shop-dddddd.jpg",
+            image: "images/shop-dddddd.webp",
             instagram: "https://www.instagram.com/dddddd_store/"
         },
         "koganehoshiimo": {
@@ -511,7 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "各種干し芋の販売",
             description: "愛知県豊橋市にあるお芋工場。\n自社工場でじっくり熟成させた\n自然の甘さの干し芋は離乳食後期のお子様から\nわんちゃんまで家族みんなで楽しめます。\n国産の無添加干し芋をご堪能ください。",
             chuzania: "黄金干し芋販売のお手伝い：50チュ",
-            image: "images/shop-koganehoshiimo.jpg",
+            image: "images/shop-koganehoshiimo.webp",
             instagram: "https://www.instagram.com/kogane_hoshiimo/"
         },
         "radlandpicnic": {
@@ -519,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "ハンバーガー",
             description: "eat me",
             chuzania: "",
-            image: "images/shop-radlandpicnic.jpg",
+            image: "images/shop-radlandpicnic.webp",
             instagram: "https://www.instagram.com/rad_land_picnic/"
         },
         "ndon": {
@@ -527,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: "うどん、天ぷら",
             description: "甘めのつゆにモチモチのうどんと揚げたての天ぷら。\n移動式うどん屋台でしか味わえない一杯がここに。",
             chuzania: "",
-            image: "images/shop-ndon.jpg",
+            image: "images/shop-ndon.webp",
             instagram: "https://www.instagram.com/ndon_yu/"
         }
     };

@@ -8,14 +8,14 @@
     <meta name="description" content="2026年3月29日（日）開催！豊川市五社稲荷社での「だるまルシェ」。おしゃれなマルシェ、キッチンカー、ステージイベントで春の訪れを楽しみましょう。">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/daruma-logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/daruma-logo.png">
+    <link rel="icon" href="images/favicon.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="images/favicon.webp">
 
     <!-- OGP -->
     <meta property="og:title" content="だるまルシェ 2026 - 豊川市五社稲荷社">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://inoueyuusuke.github.io/daruma-rche-2026/">
-    <meta property="og:image" content="https://inoueyuusuke.github.io/daruma-rche-2026/images/ogp.png">
+    <meta property="og:image" content="https://inoueyuusuke.github.io/daruma-rche-2026/images/ogp.webp">
     <meta property="og:description"
         content="2026年3月29日（日）開催！豊川市五社稲荷社での「だるまルシェ」。おしゃれなマルシェ、キッチンカー、ステージイベントで春の訪れを楽しみましょう。">
     <meta property="og:site_name" content="だるまルシェ 2026">
@@ -33,13 +33,20 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <h1 class="logo"><a href="#">だるまルシェ<span class="year">2026</span></a></h1>
+            <div class="logo"><a href="#"><img src="images/logo.webp" alt="だるまルシェ2026"></a></div>
 
             <!-- PC Menu -->
             <nav class="nav pc-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contents">Contents</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#contents">Contents <span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#time-schedule">Time Schedule</a></li>
+                            <li><a href="#event-info">Event Information</a></li>
+                            <li><a href="#shop-list">Shop List</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#access">Access</a></li>
                     <li><a href="#sponsors">Sponsors</a></li>
@@ -57,7 +64,14 @@
             <nav class="sp-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contents">Contents</a></li>
+                    <li class="sp-nav-item-dropdown">
+                        <a href="#contents">Contents</a>
+                        <ul class="sp-dropdown-menu">
+                            <li><a href="#time-schedule">- Time Schedule</a></li>
+                            <li><a href="#event-info">- Event Information</a></li>
+                            <li><a href="#shop-list">- Shop List</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#access">Access</a></li>
                     <li><a href="#sponsors">Sponsors</a></li>
@@ -68,20 +82,15 @@
 
     <main>
         <section id="hero" class="hero">
+            <h1 class="sr-only">だるまルシェ2026 | 愛知県豊川市 五社稲荷社で開催のマルシェ</h1>
             <div class="hero-image-layer">
-                <img src="images/hero-flyer.png" alt="だるまルシェ 2026 背景" class="hero-flyer-img">
+                <img src="images/hero-flyer.webp" alt="だるまルシェ 2026 背景" class="hero-flyer-img">
             </div>
             <div class="hero-container">
-                <!-- Text Content Only -->
-                <div class="hero-text-content fade-in-up">
-                    <h2 class="hero-title"><span class="title-text"></span>だるまルシェ</span><span class="year">2026</span>
-                    </h2>
-                    <div class="hero-info">
-                        <p class="hero-date">3<span class="slash">/</span>29<span class="day">(Sun)</span></p>
-                        <p class="hero-time">10:00 - 17:00</p>
-                        <p class="hero-location">五社稲荷社</p>
-                        <p class="hero-note">入場無料（小雨決行）</p>
-                    </div>
+                <!-- Logo and Info Images -->
+                <div class="hero-content fade-in-up">
+                    <img src="images/logo.webp" alt="だるまルシェ2026 ロゴ" class="hero-logo-img">
+                    <img src="images/date-place.webp" alt="3/29(Sun) 10:00-17:00 五社稲荷社" class="hero-info-img">
                 </div>
             </div>
         </section>
@@ -120,12 +129,18 @@
                 <h2 class="section-title fade-in-up">Contents</h2>
 
                 <!-- Stage Schedule -->
-                <div class="schedule-area fade-in-up delay-100">
+                <div id="time-schedule" class="schedule-area fade-in-up delay-100">
                     <h3 class="subsection-title">Time Schedule</h3>
                     <div class="schedule-list">
-                        <div class="schedule-item">
-                            <span class="time">10:00〜</span>
-                            <span class="content">桜丘高校和太鼓</span>
+                        <div class="schedule-item has-dropdown">
+                            <div class="schedule-header">
+                                <span class="time">10:00〜</span>
+                                <span class="content">桜丘高校和太鼓</span>
+                                <span class="dropdown-icon">▼</span>
+                            </div>
+                            <div class="schedule-detail">
+                                <img src="images/sakuragaoka-taiko.webp" alt="桜丘高校和太鼓">
+                            </div>
                         </div>
                         <div class="schedule-item has-dropdown">
                             <div class="schedule-header">
@@ -136,7 +151,7 @@
                             <div class="schedule-detail">
                                 <div class="guest-content-in-schedule">
                                     <p class="guest-intro-mini">スペシャルゲスト登場！</p>
-                                    <img src="images/special-guests.jpg" alt="鹿毛 誠一郎 氏 / 岡田 慎吾 氏"
+                                    <img src="images/special-guests.webp" alt="鹿毛 誠一郎 氏 / 岡田 慎吾 氏"
                                         class="guest-img-schedule">
                                     <p class="guest-names-schedule">鹿毛 誠一郎 氏 <span class="separator">/</span> 岡田 慎吾 氏
                                     </p>
@@ -145,8 +160,22 @@
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">12:15〜</span>
-                            <span class="content">　</span>
+                            <span class="time">11:30〜</span>
+                            <span class="content">BOMB!</span>
+                        </div>
+                        <div class="schedule-item has-dropdown">
+                            <div class="schedule-header">
+                                <span class="time">12:15〜</span>
+                                <span class="content">ロンフーあつし</span>
+                                <span class="dropdown-icon">▼</span>
+                            </div>
+                            <div class="schedule-detail">
+                                <div class="guest-content-in-schedule">
+                                    <p class="guest-intro-mini">あの鬼レンチャンでも大活躍のものまねタレント<br><span
+                                            class="highlight-name">【ロンフーあつし】</span><br>だるまルシェに降臨！</p>
+                                    <img src="images/ronfu-atsushi.webp" alt="ロンフーあつし" class="guest-img-schedule">
+                                </div>
+                            </div>
                         </div>
                         <div class="schedule-item has-dropdown">
                             <div class="schedule-header">
@@ -155,7 +184,7 @@
                                 <span class="dropdown-icon">▼</span>
                             </div>
                             <div class="schedule-detail">
-                                <img src="images/Kahina-bellydance-club.jpg" alt="Kahina bellydance club">
+                                <img src="images/Kahina-bellydance-club.webp" alt="Kahina bellydance club">
                             </div>
                         </div>
                         <div class="schedule-item has-dropdown">
@@ -165,41 +194,57 @@
                                 <span class="dropdown-icon">▼</span>
                             </div>
                             <div class="schedule-detail">
-                                <img src="images/diggin'on-you.jpg" alt="Diggin' On You">
+                                <img src="images/diggin'on-you.webp" alt="Diggin' On You">
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <span class="time">14:45〜</span>
-                            <span class="content">365日大葉を食べる人</span>
+                        <div class="schedule-item has-dropdown">
+                            <div class="schedule-header">
+                                <span class="time">14:45〜</span>
+                                <span class="content">365日大葉を食べる人</span>
+                                <span class="dropdown-icon">▼</span>
+                            </div>
+                            <div class="schedule-detail">
+                                <div class="guest-content-in-schedule">
+                                    <p class="guest-intro-mini">東三河で話題の<br><span
+                                            class="highlight-name">【365日大葉を食べる人】</span><br>来場！</p>
+                                    <img src="images/365-ohba.webp" alt="365日大葉を食べる人" class="guest-img-schedule">
+                                </div>
+                            </div>
                         </div>
                         <div class="schedule-item has-dropdown">
                             <div class="schedule-header">
                                 <span class="time">15:15〜</span>
-                                <span class="content">SNEAKY</span>
+                                <span class="content">studio SNEAKY</span>
                                 <span class="dropdown-icon">▼</span>
                             </div>
                             <div class="schedule-detail">
-                                <img src="images/studio-sneaky.jpg" alt="SNEAKY">
+                                <img src="images/studio-sneaky.webp" alt="SNEAKY">
                             </div>
                         </div>
                         <div class="schedule-item">
                             <span class="time">16:45〜</span>
                             <span class="content">協賛者広告</span>
                         </div>
-                        <div class="schedule-item">
-                            <span class="time">17:00〜</span>
-                            <span class="content">おかしまき</span>
+                        <div class="schedule-item has-dropdown">
+                            <div class="schedule-header">
+                                <span class="time">17:00〜</span>
+                                <span class="content">おかしまき</span>
+                                <span class="dropdown-icon">▼</span>
+                            </div>
+                            <div class="schedule-detail">
+                                <img src="images/okashimaki.webp" alt="おかしまき">
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Event Info Grid -->
-                <div class="info-grid fade-in-up delay-200">
+                <div id="event-info" class="info-grid fade-in-up delay-200">
                     <h3 class="subsection-title">Event Information</h3>
                     <div class="info-cards">
                         <div class="info-card">
                             <div class="card-image">
-                                <img src="images/tour.png" alt="五社稲荷ツアー">
+                                <img src="images/tour.webp" alt="五社稲荷ツアー">
                             </div>
                             <h4>五社稲荷ツアー</h4>
                             <p class="info-desc">歴史を話しながらめぐるツアー。<br>子供たちの興味を歴史の学びにしよう！</p>
@@ -210,7 +255,7 @@
                         </div>
                         <div class="info-card">
                             <div class="card-image">
-                                <img src="images/little-carpenter.png" alt="ちびっこ大工さん上棟式">
+                                <img src="images/little-carpenter.webp" alt="ちびっこ大工さん上棟式">
                             </div>
                             <h4>ちびっこ大工さん上棟式</h4>
                             <p class="info-desc">子どもたちが手軽に楽しく上棟体験。<br>大工さんになりきってお家を完成させよう！</p>
@@ -221,7 +266,7 @@
                         </div>
                         <div class="info-card">
                             <div class="card-image">
-                                <img src="images/chuzania.png" alt="チュッザニア">
+                                <img src="images/chuzania.webp" alt="チュッザニア">
                             </div>
                             <h4>チュッザニアとは</h4>
                             <p class="info-desc">
@@ -231,7 +276,7 @@
                         </div>
                         <div class="info-card">
                             <div class="card-image">
-                                <img src="images/vegetables.png" alt="JA協賛企画">
+                                <img src="images/vegetables.webp" alt="JA協賛企画">
                             </div>
                             <h4>JA協賛企画！！</h4>
                             <p class="info-desc">
@@ -242,14 +287,14 @@
                 </div>
 
                 <!-- Shop List -->
-                <div class="shop-area fade-in-up delay-300">
+                <div id="shop-list" class="shop-area fade-in-up delay-300">
                     <h3 class="subsection-title">Shop List</h3>
 
                     <div class="shop-category">
                         <h4>Food & Drink</h4>
                         <ul class="shop-list pink-list">
                             <li class="has-detail shop-item-modal" data-shop-id="danoncafe">
-                                <span class="shop-name">Danon Cafe (ダノンカフェ)</span>
+                                <span class="shop-name">Danon Cafe</span>
                                 <span class="shop-detail">クロッフル各種、ドリンク各種</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="bamboojockey">
@@ -316,7 +361,7 @@
                                 <span class="shop-detail">りんご飴、りんごグミ</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="paki">
-                                <span class="shop-name">paki（パキ）</span>
+                                <span class="shop-name">paki</span>
                                 <span class="shop-detail">豚汁・フランクフルト・植物販売</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="fukufukumuffins">
@@ -324,11 +369,11 @@
                                 <span class="shop-detail">からだにやさしいマフィン、焼き菓子</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="kashohiyori">
-                                <span class="shop-name">菓匠hiyori(カショウヒヨリ)</span>
+                                <span class="shop-name">菓匠hiyori</span>
                                 <span class="shop-detail">和風洋菓子(生菓子、焼き菓子)日本茶葉の販売</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="halmeoni">
-                                <span class="shop-name">halmeoni (はるもに)</span>
+                                <span class="shop-name">halmeoni</span>
                                 <span class="shop-detail">シフォンケーキ販売</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="gluckbagel">
@@ -343,7 +388,7 @@
                                 <span class="shop-name">黄金干し芋</span>
                                 <span class="shop-detail">各種干し芋の販売</span>
                             </li>
-                            <li class="has-detail">
+                            <li class="has-detail shop-item-modal" data-shop-id="nicofarm">
                                 <span class="shop-name">にこふぁーむ</span>
                                 <span class="shop-detail">いちご</span>
                             </li>
@@ -357,9 +402,9 @@
                     <div class="shop-category">
                         <h4>Goods & Workshop</h4>
                         <ul class="shop-list green-list">
-                            <li class="has-detail">
+                            <li class="has-detail shop-item-modal" data-shop-id="alkukkailo">
                                 <span class="shop-name">alkukka.ilo</span>
-                                <span class="shop-detail">アクセサリー</span>
+                                <span class="shop-detail">感覚感じるアクセサリー</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="churushe">
                                 <span class="shop-name">ちゅる〜しぇ</span>
@@ -396,10 +441,14 @@
                             </li>
 
                             <li class="has-detail shop-item-modal" data-shop-id="ayakanmuri">
-                                <span class="shop-name">ayakanmuri | melty me | natur</span>
-                                <span class="shop-detail">子供・アクセサリー・子供服・カスタムクレヨン</span>
+                                <span class="shop-name">ayakanmuri | melty me</span>
+                                <span class="shop-detail">子供服、アクセサリー、ワークショップ</span>
                             </li>
-                            <li class="has-detail">
+                            <li class="has-detail shop-item-modal" data-shop-id="natur">
+                                <span class="shop-name">natur | Lily.twinkle</span>
+                                <span class="shop-detail">カスタムクレヨン、子供服、小物</span>
+                            </li>
+                            <li class="has-detail shop-item-modal" data-shop-id="medakasuku1">
                                 <span class="shop-name">めだかすくい</span>
                                 <span class="shop-detail">めだかすくい</span>
                             </li>
@@ -408,16 +457,16 @@
                                 <span class="shop-detail">きんぎょすくい</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="dddddd">
-                                <span class="shop-name">ディーストア(ディーストア)</span>
+                                <span class="shop-name">ディーストア</span>
                                 <span class="shop-detail">ハンドメイド雑貨</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="mkbanana">
-                                <span class="shop-name">MK banana（エムケーバナナ）</span>
+                                <span class="shop-name">MK banana</span>
                                 <span class="shop-detail">アクセサリー、kids item</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="besoa">
                                 <span class="shop-name">株式会社 BE-SOA</span>
-                                <span class="shop-detail">ストラックアウト</span>
+                                <span class="shop-detail">キックターゲット</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="ange">
                                 <span class="shop-name">ange</span>
@@ -445,7 +494,7 @@
                                 <span class="shop-detail">羊毛フェルト雑貨</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="wildboar">
-                                <span class="shop-name">wild boar(ワイルドボア)</span>
+                                <span class="shop-name">wild boar</span>
                                 <span class="shop-detail">布小物、アクセサリー等</span>
                             </li>
                             <li class="has-detail shop-item-modal" data-shop-id="minoaka">
@@ -481,10 +530,10 @@
         <!-- Venue Map Section -->
         <section id="venue-map" class="section venue-map">
             <div class="container">
-                <h2 class="section-title fade-in-up">Venue Map</h2>
+                <h2 class="section-title fade-in-up">会場マップ</h2>
                 <div class="venue-map-area fade-in-up delay-100">
                     <div class="map-container">
-                        <img src="images/venue-map.png" alt="会場配置図" class="venue-map-img">
+                        <img src="images/venue-map.webp" alt="会場配置図" class="venue-map-img">
                         <p class="map-note">※当日の配置は変更になる場合があります</p>
                     </div>
                 </div>
@@ -555,9 +604,23 @@
         <section id="sponsors" class="section sponsors">
             <div class="container">
                 <h2 class="section-title fade-in-up">Sponsors</h2>
-                <div class="coming-soon fade-in-up delay-100">
-                    <p>Coming soon...</p>
-                    <span class="coming-soon-sub">協賛企業様をご紹介予定</span>
+                <div class="sponsors-list fade-in-up delay-100">
+                    <a href="https://www.tatsumi-gr.jp/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-1.webp" alt="株式会社タツミハウジング" class="sponsor-img"></a>
+                    <a href="https://le-pla-grp.jp/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-2.webp" alt="ルプラグループ" class="sponsor-img"></a>
+                    <a href="https://www.suzuyoshoji.co.jp/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-3.webp" alt="鈴与商事株式会社" class="sponsor-img"></a>
+                    <a href="http://hakusige.co.jp/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-4.webp" alt="白重" class="sponsor-img"></a>
+                    <a href="http://satsukibalance.com/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-5.webp" alt="さつきバランス整骨院" class="sponsor-img"></a>
+                    <a href="https://www.instagram.com/danoncafe/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-6.webp" alt="Danon Cafe" class="sponsor-img"></a>
+                    <a href="https://www.gamashin.com/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-7.webp" alt="蒲郡信用金庫" class="sponsor-img"></a>
+                    <a href="https://www.kk-abunao.com/" target="_blank" rel="noopener noreferrer"><img
+                            src="images/sponsor-8.webp" alt="株式会社abunao" class="sponsor-img"></a>
                 </div>
             </div>
         </section>
@@ -573,7 +636,7 @@
             </div>
 
             <div class="footer-banner">
-                <img src="images/footer-logo-transparent.png" alt="きらっととよかわ！私たちは光輝くとよかわをPRしています"
+                <img src="images/footer-logo-transparent.webp" alt="きらっととよかわ！私たちは光輝くとよかわをPRしています"
                     class="footer-banner-img">
             </div>
 

@@ -70,18 +70,16 @@ a:hover {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    text-decoration: none;
-    letter-spacing: 0.05em;
+.logo a {
+    display: block;
+    line-height: 0;
 }
 
-.logo .year {
-    font-size: 1rem;
-    color: var(--color-text);
-    margin-left: 0.5rem;
-    font-weight: 400;
+.logo img {
+    height: 40px;
+    /* ヘッダーに収まる適切な高さに調整 */
+    width: auto;
+    display: block;
 }
 
 /* PC Nav */
@@ -112,6 +110,62 @@ a:hover {
 
 .pc-nav a:hover::after {
     width: 100%;
+}
+
+/* Dropdown styles for PC Nav */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.pc-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 100;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.pc-nav .dropdown-menu li {
+    width: 100%;
+}
+
+.pc-nav .dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pc-nav .dropdown-menu a::after {
+    display: none;
+}
+
+.pc-nav .dropdown-menu a:hover {
+    background-color: rgba(200, 58, 64, 0.05);
+    color: var(--color-primary);
+}
+
+.dropdown-arrow {
+    font-size: 0.8em;
+    margin-left: 2px;
 }
 
 /* Mobile Nav & Hamburger */
@@ -200,7 +254,7 @@ a:hover {
         text-align: center;
     }
 
-    .sp-nav li {
+    .sp-nav>ul>li {
         margin: 2rem 0;
     }
 
@@ -209,23 +263,42 @@ a:hover {
         font-size: 1.5rem;
         color: var(--color-primary);
         font-weight: 700;
+        text-decoration: none;
+    }
+
+    .sp-dropdown-menu {
+        list-style: none;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sp-dropdown-menu li {
+        margin: 0;
+    }
+
+    .sp-dropdown-menu a {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--color-text);
     }
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
-    /* Full screen height */
-    min-height: 600px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* スマホブラウザのアドレスバー高さを考慮 */
     background-color: var(--color-bg);
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    flex-direction: column;
+    /* flex-growで子要素を伸ばすため */
+    padding: 60px 0 0;
+    /* Add top padding to account for fixed header */
 }
 
 /* Hero Background Animation: Falling Sakura */
@@ -295,171 +368,85 @@ a:hover {
     text-align: center;
     width: 100%;
     max-width: 1200px;
+    flex-grow: 1;
+    /* 親要素の残りの高さをすべて埋める */
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 /* Removed dedicated .hero-image-container styles as it's replaced by .hero-image-layer */
 
-.hero-text-content {
-    font-family: var(--font-heading);
-    color: var(--color-text);
-    /* Remove background box styles */
-    background-color: transparent;
-    padding: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-
-    /* Add text shadow for legibility and impact */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8),
-        0 0 10px rgba(255, 255, 255, 0.5);
+.hero-content {
+    width: 100%;
+    flex-grow: 1;
+    /* 親要素の残りの高さをすべて埋める */
+    position: relative;
+    /* 子要素の絶対配置の基準にする */
+    /* フレックスボックス関連の指定はすべて削除します */
 }
 
-.hero-title {
-    font-size: 5rem;
-    /* Increased size */
-    font-weight: 900;
-    margin-bottom: 1rem;
-    letter-spacing: 0.1em;
-    color: var(--color-primary);
-    /* Strong white outline and drop shadow for maximum readability */
-    text-shadow:
-        3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff,
-        2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
-        3px 3px 0 #fff,
-        0 5px 15px rgba(0, 0, 0, 0.3);
-    line-height: 1.1;
+.hero-logo-img {
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+
+    /* 位置を絶対配置で確実に指定する */
+    position: absolute;
+    top: 52%;
+    /* 先ほどの48%からさらにほんの少し下げるため52%に調整 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 自身のサイズを考慮して中央揃え */
+    z-index: 4;
 }
 
-.hero-title .title-text {
-    display: inline-block;
-    white-space: nowrap;
-}
+.hero-info-img {
+    width: 60%;
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
 
-.hero-title .year {
-    font-family: var(--font-body);
-    font-size: 2.5rem;
-    font-weight: 700;
-    display: block;
-    /* Force new line */
-    text-align: center;
-    /* Center align with title */
-    margin-top: -15px;
-    /* Bring closer to title */
-    color: var(--color-text);
-    text-shadow: 2px 2px 0 #fff;
-    letter-spacing: 0.2em;
-    /* Add spacing for style */
-}
-
-.hero-info {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    font-weight: 700;
-}
-
-.hero-date {
-    font-size: 4rem;
-    /* Increased size */
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 0 #fff, 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.hero-date .day {
-    font-size: 2rem;
-    margin-left: 0.5rem;
-    color: var(--color-text);
-}
-
-.hero-time {
-    font-size: 2.5rem;
-    /* Increased size */
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-    text-shadow: 2px 2px 0 #fff, 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.hero-location {
-    font-size: 3rem;
-    /* Increased size */
-    margin-bottom: 1rem;
-    border-bottom: 3px solid var(--color-accent);
-    display: inline-block;
-    padding-bottom: 0.2rem;
-    text-shadow: 2px 2px 0 #fff, 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.hero-note {
-    font-size: 1.2rem;
-    opacity: 1;
-    /* consistent visibility */
-    margin-top: 1.5rem;
-    font-weight: 700;
-    background-color: rgba(255, 255, 255, 0.6);
-    /* Small bg for note only */
-    display: inline-block;
-    padding: 0.2rem 1rem;
-    border-radius: 20px;
+    /* 下部の見切れを防ぐための確実な配置 */
+    position: absolute;
+    bottom: 30px;
+    /* 親要素の一番下から確実に30px浮かす */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 左右の中央揃え */
+    z-index: 4;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-container {
         padding: 0 1rem;
+        /* height: 100%; が高さ0に潰れる原因だったため削除 */
     }
 
-    .hero-title {
-        font-size: 12.5vw;
-        /* Maximize title size */
+    .hero-content {
+        /* justify-content: center; */
+        /* padding-top: 5vh; */
+        /* スマホ用 */
     }
 
-    .hero-title .year {
-        font-size: 5vw;
-        margin-top: -5px;
-        /* Adjust gap responsively */
-    }
-
-    .hero-date {
-        font-size: 2rem;
-        /* Reduced to emphasize title */
-    }
-
-    .hero-time {
-        font-size: 1.5rem;
-        /* Reduced */
-    }
-
-    .hero-location {
-        font-size: 1.8rem;
-        /* Reduced */
-    }
-
-    .hero-text-content {
+    .hero-logo-img {
         width: 100%;
-        padding: 0;
+        max-width: none;
+        /* margin-bottom: 2rem; */
+        top: 50%;
+        /* スマホ時も少し下へ微調整 (重なり防止のため少しだけ上) */
     }
 
-    .hero-info p {
-        white-space: nowrap;
-    }
+    .hero-info-img {
+        width: 80%;
+        /* margin-bottom: 4rem; */
+        bottom: 20px;
+        /* スマホ時は下からの余白を少しだけ狭める */
 
-    .hero-date {
-        font-size: 13vw;
-        /* Responsive size to prevent wrap */
-    }
-
-    .hero-time {
-        font-size: 8vw;
-    }
-
-    .hero-location {
-        font-size: 10vw;
     }
 }
 
-display: none;
-}
 
 /* Animations */
 .animate-float {
@@ -521,7 +508,7 @@ display: none;
     padding: 8rem 0;
     /* パディングを元に戻す */
     position: relative;
-    background-image: url('images/cherry-blossom-tree.png');
+    background-image: url('images/cherry-blossom-tree.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -757,6 +744,32 @@ display: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.guest-content-in-schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.guest-intro-mini {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-name {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin: 0.3rem 0;
+    letter-spacing: 0.05em;
+}
+
 /* Event Info Grid */
 .info-grid {
     margin-bottom: 4rem;
@@ -895,6 +908,15 @@ display: none;
     font-weight: 400;
 }
 
+.shop-direct-img {
+    margin-top: 0.8rem;
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .shop-list li:hover {
     transform: translateY(-3px);
 }
@@ -1029,6 +1051,8 @@ display: none;
     margin-bottom: 1.5rem;
     font-weight: 700;
     color: #004085;
+    white-space: pre-wrap;
+    /* 改行を反映 */
 }
 
 .modal-chuzania::before {
@@ -1210,6 +1234,19 @@ display: none;
     display: none;
 }
 
+/* Screen reader only / Visually hidden for SEO */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .gallery-note {
     text-align: right;
     font-size: 0.85rem;
@@ -1222,28 +1259,46 @@ display: none;
     background-color: var(--color-bg);
 }
 
-.coming-soon {
-    text-align: center;
-    padding: 3rem;
-    border: 2px dashed var(--color-accent);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    max-width: 600px;
+.sponsors-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 2rem 0;
 }
 
-.coming-soon p {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    letter-spacing: 0.1em;
+.sponsors-list a {
+    display: block;
+    width: 250px;
+    max-width: 45%;
+    transition: transform 0.3s ease;
 }
 
-.coming-soon-sub {
-    font-size: 0.9rem;
-    color: #666;
+.sponsors-list a:hover {
+    transform: translateY(-5px);
+}
+
+.sponsor-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    /* 画像の背景の白色を透過してセクション背景に馴染ませる */
+}
+
+@media (max-width: 768px) {
+    .sponsors-list {
+        gap: 1.5rem;
+    }
+
+    .sponsors-list a {
+        width: 150px;
+        /* スマホサイズで調整 */
+        max-width: 100%;
+    }
 }
 
 /* Access Section */
@@ -1418,30 +1473,6 @@ display: none;
     .access-content {
         flex-direction: column-reverse;
     }
-
-    .hero-content {
-        width: 95%;
-        max-width: 600px;
-        /* 少し幅広に */
-        height: auto;
-        aspect-ratio: auto;
-        /* 正円解除 */
-        padding: 1.5rem;
-        border-radius: 20px;
-        /* 角丸長方形 */
-        display: flex;
-        flex-direction: column;
-        /* スマホでは縦並び */
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 0;
-        /* 下部に少し余白 */
-    }
-
-    .hero-catch {
-        font-size: 1.1rem;
-        /* スマホでは少し文字を小さくして収める */
-    }
 }
 
 /* Scroll Animations */
@@ -1470,25 +1501,26 @@ display: none;
 
 /* Chuzania Highlight Styles */
 .shop-list li.is-chuzania {
-    border: 3px solid var(--color-accent);
-    /* Gold border */
     position: relative;
-    background-color: #fffaf0;
-    /* Slight tint */
-    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    /* さりげない細い枠に */
+    background-color: #fffefa;
+    /* ほんの少しだけ色を付ける程度 */
 }
 
 .shop-list li.is-chuzania::before {
     content: "チュッザニア対象";
     position: absolute;
-    top: -12px;
-    left: 10px;
-    background-color: var(--color-accent);
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-weight: 700;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    top: -10px;
+    left: 15px;
+    background-color: #fff;
+    /* 背景をなくしてすっきり見せる */
+    color: var(--color-accent);
+    /* 文字の色でアピール */
+    border: 1px solid var(--color-accent);
+    font-size: 0.65rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
     z-index: 1;
 }
