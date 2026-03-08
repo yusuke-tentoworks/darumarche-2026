@@ -289,29 +289,19 @@ a:hover {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    /* スマホブラウザのアドレスバー高さを考慮 */
     background-color: var(--color-bg);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    /* flex-growで子要素を伸ばすため */
-    padding: 60px 0 0;
-    /* Add top padding to account for fixed header */
+    padding: 60px 0 20px;
 }
 
 /* Hero Background Animation: Falling Sakura */
 .hero-petal {
     position: absolute;
     top: -10%;
-    /* Start above viewport */
     background-color: #ffd1dc;
     border-radius: 100% 0 100% 0;
-    /* Petal shape */
     opacity: 0.8;
     z-index: 1;
-    /* ★花びら最背面 */
     pointer-events: none;
     animation-name: fall, sway;
     animation-timing-function: linear, ease-in-out;
@@ -341,100 +331,71 @@ a:hover {
     }
 }
 
-.hero-image-layer {
-    position: absolute;
-    top: 60px;
-    /* ★ヘッダーの高さ分を下げ、中央位置をコンテナと完璧に同期 */
-    bottom: 0;
-    left: 0;
+.hero-container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    z-index: 2;
-    /* ★花びらの上、ロゴの下 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-poster-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-flyer-img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* ★ポスターが全体表示されるようB案に対応 */
-    object-position: center;
+    height: auto;
     display: block;
 }
 
-.hero-container {
-    position: relative;
-    z-index: 3;
-    /* Above image */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 1200px;
-    flex-grow: 1;
-    /* 親要素の残りの高さをすべて埋める */
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Removed dedicated .hero-image-container styles as it's replaced by .hero-image-layer */
-
-.hero-content {
-    width: 100%;
-    flex-grow: 1;
-    /* 親要素の残りの高さをすべて埋める */
-    position: relative;
-    /* 子要素の絶対配置の基準にする */
-    /* フレックスボックス関連の指定はすべて削除します */
-}
-
 .hero-logo-img {
-    width: 85%;
-    max-width: 650px;
+    width: 80%;
+    max-width: 550px;
     height: auto;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 
-    /* ★ポスター中央を基準とし、自身の高さを元に上にズラすことで画面サイズによる崩れを防止 */
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -50%);
     z-index: 4;
 }
 
 .hero-info-img {
-    width: 60%;
+    width: 50%;
     max-width: 320px;
     height: auto;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 
-    /* ★ポスター中央を基準とし、自身の高さを元に下にズラすことで崩れを防止 */
     position: absolute;
-    top: 50%;
+    bottom: 5%;
     left: 50%;
-    transform: translate(-50%, 80%);
+    transform: translateX(-50%);
     z-index: 4;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-container {
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .hero-logo-img {
-        width: 95%;
+        width: 90%;
         max-width: none;
-        top: 50%;
-        transform: translate(-50%, -60%);
-        /* スマホも中央基準 */
+        top: 35%;
     }
 
     .hero-info-img {
-        width: 75%;
-        top: 50%;
-        transform: translate(-50%, 65%);
-        /* スマホも中央基準 */
+        width: 70%;
+        bottom: 5%;
     }
 }
 
