@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         # エックスサーバーの公開ディレクトリを指定します
-        server-dir: /shop.tentoworks.com/public_html/
+        server-dir: /tatsumi-gr.jp/public_html/events/darumarche-2026
         # 不要なファイルを転送から除外します
         exclude: |
           **/.git*
