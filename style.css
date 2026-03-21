@@ -1212,51 +1212,19 @@ a:hover {
     margin-top: 1rem;
 }
 
-/* Sponsors Section */
-.sponsors {
-    background-color: var(--color-bg);
+/* Sponsors Section: Full Width */
+.sponsors-fullwidth {
+    width: 100%;
+    padding: 6rem 0; /* 他のセクションに合わせた上下の余白 */
+    background-color: #fff; /* 余白部分を白に指定 */
+    line-height: 0;
+    overflow: hidden;
 }
 
-.sponsors-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-.sponsors-list a {
-    display: block;
-    width: 250px;
-    max-width: 45%;
-    transition: transform 0.3s ease;
-}
-
-.sponsors-list a:hover {
-    transform: translateY(-5px);
-}
-
-.sponsor-img {
+.sponsor-full-img {
     width: 100%;
     height: auto;
     display: block;
-    mix-blend-mode: multiply;
-    /* 画像の背景の白色を透過してセクション背景に馴染ませる */
-}
-
-@media (max-width: 768px) {
-    .sponsors-list {
-        gap: 1.5rem;
-    }
-
-    .sponsors-list a {
-        width: 150px;
-        /* スマホサイズで調整 */
-        max-width: 100%;
-    }
 }
 
 /* Access Section */
