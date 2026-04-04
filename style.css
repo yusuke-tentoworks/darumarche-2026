@@ -1215,7 +1215,7 @@ a:hover {
 /* Sponsors Section: Full Width */
 .sponsors-fullwidth {
     width: 100%;
-    padding: 6rem 0; /* 他のセクションに合わせた上下の余白 */
+    padding: 6rem 1rem; /* 他のセクションに合わせ、上下に加えて左右にも余白を追加 */
     background-color: #fff; /* 余白部分を白に指定 */
     line-height: 0;
     overflow: hidden;
