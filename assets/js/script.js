@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.getElementById('load-more-gallery');
 
     if (galleryGrid && loadMoreBtn) {
-        const totalImages = 39;
+        const totalImages = 53;
         const itemsPerPage = 12;
         let currentPage = 1;
 
@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 imgContainer.className = 'gallery-item';
 
                 const img = document.createElement('img');
-                img.src = `assets/images/gallery-2025-${imgNum}.webp`; // Optimized JPG
-                img.alt = `Gallery Image 2025-${imgNum}`;
+                img.src = `assets/images/gallery-2026-${imgNum}.webp`; // Optimized JPG
+                img.alt = `Gallery Image 2026-${imgNum}`;
                 img.loading = 'lazy';
 
                 imgContainer.appendChild(img);
