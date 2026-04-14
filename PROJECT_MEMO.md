@@ -64,7 +64,7 @@
 - [x] **[セキュリティ](01_security_guidelines.md)**: パスワード隠匿、WAF、常時SSLリダイレクト
 - [x] **[SEO・パフォーマンス](02_seo_performance_guidelines.md)**: メタタグ、サイトマップ、OGP、画像最適化
 - [x] **[コーディング・管理](03_coding_management_guidelines.md)**: フォルダ構成、命名規則、共通パーツ化
-- [x] **[運用・法務](04_operation_legal_guidelines.md)**: プライバシーポリシー、特商法、バックアップ設定
+- [x] **[運用・法務](04_operation_legal_guidelines.md)**: プライバシーポリシー、特商法（本プロジェクトでは不要と判断し削除済み）
 - [x] **[品質保証(QA)](05_quality_assurance_guidelines.md)**: 表示崩れ、リンク、フォーム動作、404ページ
 
 ---
