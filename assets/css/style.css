@@ -466,7 +466,7 @@ a:hover {
     padding: 8rem 0;
     /* パディングを元に戻す */
     position: relative;
-    background-image: url('images/cherry-blossom-tree.webp');
+    background-image: url('../images/cherry-blossom-tree.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

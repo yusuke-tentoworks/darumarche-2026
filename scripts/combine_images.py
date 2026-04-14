@@ -31,6 +31,6 @@ def combine_images(image_path1, image_path2, output_path):
 brain_dir = "/Users/inoueyuusuke/.gemini/antigravity/brain/966051a1-15a2-4ca7-90a9-b29d47fb60d7"
 image1 = os.path.join(brain_dir, "media__1770821664546.jpg") # Natur
 image2 = os.path.join(brain_dir, "media__1770821664557.jpg") # Ayakanmuri/Meltyme
-output = "images/shop-ayakanmuri-combined.jpg"
+output = "assets/images/shop-ayakanmuri-combined.jpg"
 
 combine_images(image1, image2, output)

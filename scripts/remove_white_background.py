@@ -20,4 +20,4 @@ def make_transparent(input_path, output_path):
     print(f"Transparency applied to {output_path}")
 
 if __name__ == "__main__":
-    make_transparent("images/footer-logo.png", "images/footer-logo-transparent.png")
+    make_transparent("assets/images/footer-logo.png", "assets/images/footer-logo-transparent.png")

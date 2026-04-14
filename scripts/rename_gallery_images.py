@@ -3,7 +3,7 @@ import glob
 import re
 
 def rename_screenshots():
-    folder_path = "images"
+    folder_path = "assets/images"
     # Match files starting with "スクリーンショット" or "Screenshot"
     files = glob.glob(os.path.join(folder_path, "スクリーンショット*.png")) + \
             glob.glob(os.path.join(folder_path, "Screenshot*.png"))

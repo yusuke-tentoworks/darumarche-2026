@@ -41,5 +41,5 @@ def resize_images(directory, max_width=1200, quality=85):
             print(f"Error processing {file_path}: {e}")
 
 if __name__ == "__main__":
-    target_dir = os.path.join(os.getcwd(), "images")
+    target_dir = os.path.join(os.getcwd(), "assets/images")
     resize_images(target_dir)
